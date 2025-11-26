@@ -5,9 +5,6 @@ const rightClickMessage = 'You have done a right click';
 const dynamicClickMessage = 'You have done a dynamic click';
 
 test.describe('DemoQA Buttons Test', () => {
-    test.beforeEach(async ({ elementsPage }) => {
-        await elementsPage.clickButtonsBtn();
-    });
     test('Double click button', async ({ buttonsPage }) => {
         await buttonsPage.doubleClickBtn();
         const msg = await buttonsPage.getDoubleClickMessage();

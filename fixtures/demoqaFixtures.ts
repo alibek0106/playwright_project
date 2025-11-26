@@ -13,8 +13,9 @@ export const test = base.extend<MyFixtures>({
         await elementsPage.open('elements');
         await use(elementsPage);
     },
-    buttonsPage: async ({ page }, use) => {
+    buttonsPage: async ({ page, elementsPage }, use) => {
         const buttonsPage = new ElementsButtonsPage(page);
+        await elementsPage.clickButtonsBtn();
         await use(buttonsPage);
     },
 });
