@@ -8,27 +8,27 @@ export class ElementsButtonsPage extends ElementsPage {
     clickButton = 'Click Me';
     dynamicClickMessage = 'You have done a dynamic click';
 
-    async doubleClickBtn() {
+    async doubleClickBtn(): Promise<void> {
         await this.page.getByText(this.doubleClickButton).dblclick();
     }
 
-    async getDoubleClickMessage() {
+    async getDoubleClickMessage(): Promise<string> {
         return this.page.getByText(this.doubleclickMessage).innerText();
     }
 
-    async rightClickBtn() {
+    async rightClickBtn(): Promise<void> {
         await this.page.getByText(this.rightClickButton).click({ button: 'right' });
     }
 
-    async getRightClickMessage() {
+    async getRightClickMessage(): Promise<string> {
         return this.page.getByText(this.rightClickMessage).innerText();
     }
 
-    async clickBtn() {
+    async clickBtn(): Promise<void> {
         await this.page.getByText(this.clickButton).click();
     }
 
-    async getDynamicClickMessage() {
+    async getDynamicClickMessage(): Promise<string> {
         return this.page.getByText(this.clickButton).innerText();
     }
 }
