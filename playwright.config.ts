@@ -11,6 +11,5 @@ export default defineConfig({
         ignoreHTTPSErrors: true,
         video: 'retain-on-failure',
         screenshot: 'only-on-failure',
-        baseURL: 'https://the-internet.herokuapp.com',
     },
 });    

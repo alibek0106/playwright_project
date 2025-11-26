@@ -4,7 +4,7 @@ export class BasePage {
     constructor(protected page: Page) { }
 
     async open(path: string) {
-        await this.page.goto(`https://the-internet.herokuapp.com/${path}`);
+        await this.page.goto(`https://demoqa.com/${path}`);
     }
 
     async click(locator: string) {
