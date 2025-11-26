@@ -1,4 +1,4 @@
-import { test, expect } from '../../fixtures/testFixtures';
+import { test, expect } from '../../../fixtures/testFixtures';
 
 const actualDueSum = 251.00;
 const expectedEmail = "jdoe@hotmail.com";

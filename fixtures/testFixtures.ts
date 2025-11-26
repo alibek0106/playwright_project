@@ -1,7 +1,7 @@
 import { test as base } from '@playwright/test';
-import { LoginPage } from '../src/pages/loginPage';
-import { DynamicControlsPage } from '../src/pages/DynamicControlsPage';
-import { SortableTablesPage } from '../src/pages/SortableTablesPage';
+import { LoginPage } from '../src/pages/TheInternetPages/loginPage';
+import { DynamicControlsPage } from '../src/pages/TheInternetPages/DynamicControlsPage';
+import { SortableTablesPage } from '../src/pages/TheInternetPages/SortableTablesPage';
 
 type MyFixtures = {
     loginPage: LoginPage;

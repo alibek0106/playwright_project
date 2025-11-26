@@ -1,4 +1,4 @@
-import { test, expect } from '../../fixtures/testFixtures';
+import { test } from '../../../fixtures/testFixtures';
 
 test('Dynamic Controls: remove checkbox and enable input', async ({ dynamicControlsPage }) => {
     await dynamicControlsPage.removeCheckbox();
