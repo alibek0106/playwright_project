@@ -1,43 +1,27 @@
-import { Page, Locator } from '@playwright/test';
+import { BasePage } from './BasePage';
 
-export class LoginPage {
-    constructor(private page: Page) { }
-
-    get usernameInput(): Locator {
-        return this.page.locator('//input[@id="username"]');
-    }
-
-    get passwordInput(): Locator {
-        return this.page.locator('//input[@id="password"]');
-    }
-
-    get loginButton(): Locator {
-        return this.page.locator('//button[@type="submit"]');
-    }
-
-    get flashMessage(): Locator {
-        return this.page.locator('//*[@id="flash"]');
-    }
-
-    get logoutButton(): Locator {
-        return this.page.locator('//*[text()=" Logout"]');
-    }
+export class LoginPage extends BasePage {
+    usernameInput = '//input[@id="username"]';
+    passwordInput = '//input[@id="password"]';
+    loginButton = '//button[@type="submit"]';
+    flashMessage = '//*[@id="flash"]';
+    logoutButton = '//*[text()=" Logout"]';
 
     async goTo() {
-        await this.page.goto('/login');
+        await this.open('/login');
     }
 
     async login(username: string, password: string) {
-        await this.usernameInput.fill(username);
-        await this.passwordInput.fill(password);
-        await this.loginButton.click();
+        await this.type(this.usernameInput, username);
+        await this.type(this.passwordInput, password);
+        await this.click(this.loginButton);
     }
 
     async getFlashMessage() {
-        return await this.flashMessage.textContent();
+        return await this.page.locator(this.flashMessage).textContent();
     }
 
     async logout() {
-        await this.logoutButton.click();
+        await this.click(this.logoutButton);
     }
 }
