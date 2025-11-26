@@ -1,10 +1,12 @@
 import { test as base } from '@playwright/test';
 import { LoginPage } from '../src/pages/loginPage';
 import { DynamicControlsPage } from '../src/pages/DynamicControlsPage';
+import { SortableTablesPage } from '../src/pages/SortableTablesPage';
 
 type MyFixtures = {
     loginPage: LoginPage;
     dynamicControlsPage: DynamicControlsPage;
+    sortableTablesPage: SortableTablesPage;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -18,6 +20,11 @@ export const test = base.extend<MyFixtures>({
         await dynamicControlsPage.goTo();
         await use(dynamicControlsPage);
     },
+    sortableTablesPage: async ({ page }, use) => {
+        const sortableTablesPage = new SortableTablesPage(page);
+        await sortableTablesPage.goTo();
+        await use(sortableTablesPage);
+    }
 });
 
 export { expect } from '@playwright/test';
