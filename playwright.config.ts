@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
 
@@ -26,7 +26,7 @@ export default defineConfig({
         {
             name: 'chromium',
             use: {
-                browserName: 'chromium',
+                ...devices['Desktop Chrome'],
             },
         },
         //{
