@@ -30,7 +30,7 @@ jobs:
         run: pnpm install
 
       - name: Install Playwright browsers
-        run: pnpm exec playwright install --with-dependencies
+        run: pnpm exec playwright install --with-deps
 
       - name: Run Playwright Tests
         run: pnpm exec playwright test
