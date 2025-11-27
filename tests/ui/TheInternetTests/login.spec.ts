@@ -9,7 +9,7 @@ test.describe('Login tests', () => {
 
     test('Login with wrong password', async ({ loginPage }) => {
         await loginPage.login('tomsmith', 'wrongpass');
-        await expect(loginPage.flashAlert).toContainText('Your password is invlid!');
+        await expect(loginPage.flashAlert).toContainText('Your password is invalid!');
     });
 
     test('Login with empty username', async ({ loginPage }) => {

@@ -13,7 +13,7 @@ export class LoginPage extends BasePage {
         this.usernameInput = page.getByLabel('Username');
         this.passwordInput = page.getByLabel('Password');
         this.loginBtn = page.getByRole('button', { name: 'Login' });
-        this.logoutBtn = page.getByRole('button', { name: 'Logout' });
+        this.logoutBtn = page.getByRole('link', { name: 'Logout' });
         this.flashAlert = page.locator('#flash');
     }
 
