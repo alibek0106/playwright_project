@@ -7,19 +7,16 @@ const dynamicClickMessage = 'You have done a dynamic click';
 test.describe('DemoQA Buttons Test', () => {
     test('Double click button', async ({ buttonsPage }) => {
         await buttonsPage.doubleClickBtn();
-        const msg = await buttonsPage.getDoubleClickMessage();
-        expect(msg).toBe(doubleClickMessage);
+        await expect(buttonsPage.doubleclickMessage).toContainText(doubleClickMessage);
     });
 
     test('Right click button test', async ({ buttonsPage }) => {
         await buttonsPage.rightClickBtn();
-        const msg = await buttonsPage.getRightClickMessage();
-        expect(msg).toBe(rightClickMessage);
+        await expect(buttonsPage.rightClickMessage).toContainText(rightClickMessage);
     });
 
     test('Dynamic click button test', async ({ buttonsPage }) => {
         await buttonsPage.clickBtn();
-        const msg = await buttonsPage.getDynamicClickMessage();
-        expect(msg).toBe(dynamicClickMessage);
+        await expect(buttonsPage.dynamicClickMessage).toContainText(dynamicClickMessage);
     });
 });
